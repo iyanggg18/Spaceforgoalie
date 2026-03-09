@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Space For Goalie</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0b0b0b;
+color:white;
+}
+
+header{
+background:black;
+text-align:center;
+padding:30px;
+border-bottom:2px solid gold;
+}
+
+h1{
+color:gold;
+letter-spacing:3px;
+}
+
+nav{
+display:flex;
+justify-content:center;
+background:#111;
+flex-wrap:wrap;
+}
+
+nav button{
+background:none;
+border:none;
+color:gold;
+padding:15px 20px;
+font-size:16px;
+cursor:pointer;
+}
+
+nav button:hover{
+background:gold;
+color:black;
+}
+
+.section{
+display:none;
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.active{
+display:block;
+}
+
+.card{
+background:#111;
+border:1px solid gold;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid gold;
+padding:10px;
+}
+
+th{
+color:gold;
+}
+
+footer{
+text-align:center;
+padding:20px;
+border-top:1px solid gold;
+margin-top:40px;
+color:gold;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+background:#111;
+border:1px solid gold;
+color:white;
+}
+
+button.post{
+margin-top:10px;
+padding:10px 20px;
+background:gold;
+border:none;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>SPACE FOR GOALIE</h1>
+<p>Anything about goalkeepers</p>
+
+</header>
+
+<nav>
+
+<button onclick="show('home')">Home</button>
+<button onclick="show('news')">News</button>
+<button onclick="show('transfer')">Transfers</button>
+<button onclick="show('saves')">Top Saves</button>
+<button onclick="show('ranking')">Top Goalkeepers</button>
+
+</nav>
+
+<!-- HOME -->
+
+<div id="home" class="section active">
+
+<h2 style="color:gold;">Welcome</h2>
+
+<div class="card">
+Space For Goalie is a platform dedicated to everything about goalkeepers — legendary saves, top shot stoppers, transfers, and the latest goalkeeper news.
+</div>
+
+</div>
+
+<!-- NEWS -->
+
+<div id="news" class="section">
+
+<h2 style="color:gold;">Goalkeeper News</h2>
+
+<div id="newsContainer"></div>
+
+</div>
+
+<!-- TRANSFER -->
+
+<div id="transfer" class="section">
+
+<h2 style="color:gold;">Transfers</h2>
+
+<div id="transferContainer"></div>
+
+</div>
+
+<!-- SAVES -->
+
+<div id="saves" class="section">
+
+<h2 style="color:gold;">Top Saves</h2>
+
+<div id="savesContainer"></div>
+
+</div>
+
+<!-- RANKING -->
+
+<!-- RANKING -->
+
+<div id="ranking" class="section">
+
+<h2 style="color:gold;">Top 10 Goalkeepers of the Decade</h2>
+
+<style>
+
+.table-scroll{
+overflow-x:auto;
+width:100%;
+}
+
+table{
+border-collapse:collapse;
+min-width:900px;
+}
+
+img{
+width:80px;
+height:100px;
+object-fit:cover;
+border-radius:6px;
+}
+
+</style>
+
+<div class="table-scroll">
+
+<table>
+
+<tr>
+<th>Rank</th>
+<th>Photo</th>
+<th>Name</th>
+<th>Age</th>
+<th>Club / Country</th>
+<th>Matches</th>
+<th>Clean Sheets</th>
+<th>Goals Conceded</th>
+<th>Save %</th>
+<th>Penalty Saves</th>
+<th>Trophies</th>
+<th>Market Value</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Super_Gigi_Buffon_%28Juventus%29_%282%29.jpg"></td>
+<td>Gianluigi Buffon</td>
+<td>48</td>
+<td>Italy / Juventus Legend</td>
+<td>1151</td>
+<td>506</td>
+<td>960</td>
+<td>74%</td>
+<td>33</td>
+<td>28</td>
+<td>Retired</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><img src="https://ligalaga.id/wp-content/uploads/2019/05/Iker-Casillas-Saves-ever-Real-Madrid-Spain-Goalkeeper-HD-Wallpaper.jpg"></td>
+<td>Iker Casillas</td>
+<td>44</td>
+<td>Spain / Real Madrid Legend</td>
+<td>1048</td>
+<td>439</td>
+<td>1016</td>
+<td>72%</td>
+<td>25</td>
+<td>24</td>
+<td>Retired</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Arsenal_players_training_before_2019_UEFA_Europa_League_final_07_%28cropped%29.jpg"></td>
+<td>Petr Čech</td>
+<td>43</td>
+<td>Czech Republic / Chelsea Legend</td>
+<td>735</td>
+<td>391</td>
+<td>653</td>
+<td>74%</td>
+<td>20</td>
+<td>18</td>
+<td>Retired</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/20180602_FIFA_Friendly_Match_Austria_vs._Germany_Manuel_Neuer_850_0723.jpg/960px-20180602_FIFA_Friendly_Match_Austria_vs._Germany_Manuel_Neuer_850_0723.jpg"></td>
+<td>Manuel Neuer</td>
+<td>40</td>
+<td>Bayern Munich / Germany</td>
+<td>720</td>
+<td>342</td>
+<td>618</td>
+<td>73%</td>
+<td>23</td>
+<td>27</td>
+<td>€7M</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Thibaut_Courtois_WC2022.jpg"></td>
+<td>Thibaut Courtois</td>
+<td>33</td>
+<td>Real Madrid / Belgium</td>
+<td>522</td>
+<td>221</td>
+<td>479</td>
+<td>75%</td>
+<td>18</td>
+<td>19</td>
+<td>€25M</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Alisson_in_2018.jpg/500px-Alisson_in_2018.jpg"></td>
+<td>Alisson Becker</td>
+<td>33</td>
+<td>Liverpool / Brazil</td>
+<td>381</td>
+<td>171</td>
+<td>318</td>
+<td>76%</td>
+<td>7</td>
+<td>11</td>
+<td>€35M</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Jan_Oblak_2019.jpg/500px-Jan_Oblak_2019.jpg"></td>
+<td>Jan Oblak</td>
+<td>33</td>
+<td>Atletico Madrid / Slovenia</td>
+<td>472</td>
+<td>223</td>
+<td>362</td>
+<td>77%</td>
+<td>15</td>
+<td>6</td>
+<td>€28M</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Marc-Andre_Ter_Stegen_ACCI_FCBARCELONA_Turisme_Catalunya_gira_pretemporada_CATPRESS.jpg/500px-Marc-Andre_Ter_Stegen_ACCI_FCBARCELONA_Turisme_Catalunya_gira_pretemporada_CATPRESS.jpg"></td>
+<td>Marc-André ter Stegen</td>
+<td>33</td>
+<td>Girona FC / Germany</td>
+<td>421</td>
+<td>181</td>
+<td>349</td>
+<td>74%</td>
+<td>10</td>
+<td>15</td>
+<td>€35M</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Lloris_2018_%28cropped%29.jpg"></td>
+<td>Hugo Lloris</td>
+<td>39</td>
+<td>LAFC / France</td>
+<td>824</td>
+<td>361</td>
+<td>758</td>
+<td>71%</td>
+<td>18</td>
+<td>11</td>
+<td>€2M</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Norway_Italy_-_June_2025_B_33_-_Gianluigi_Donnarumma_%28close-up%29.jpg/500px-Norway_Italy_-_June_2025_B_33_-_Gianluigi_Donnarumma_%28close-up%29.jpg"></td>
+<td>Gianluigi Donnarumma</td>
+<td>27</td>
+<td>Manchester City / Italy</td>
+<td>362</td>
+<td>151</td>
+<td>309</td>
+<td>74%</td>
+<td>9</td>
+<td>8</td>
+<td>€50M</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- ADMIN -->
+
+<div id="admin" class="section">
+
+<h2 style="color:gold;">Admin Post</h2>
+
+<input id="title" placeholder="Title">
+
+<textarea id="text" placeholder="Text"></textarea>
+
+<button class="post" onclick="postNews()">Post News</button>
+
+</div>
+
+<footer>
+
+© 2026 Space For Goalie
+
+</footer>
+
+<script>
+
+function show(section){
+
+document.querySelectorAll(".section").forEach(s=>{
+
+s.classList.remove("active")
+
+})
+
+document.getElementById(section).classList.add("active")
+
+}
+
+function postNews(){
+
+let title=document.getElementById("title").value
+let text=document.getElementById("text").value
+
+let news=document.createElement("div")
+
+news.className="card"
+
+news.innerHTML="<h3>"+title+"</h3><p>"+text+"</p>"
+
+document.getElementById("newsContainer").appendChild(news)
+
+}
+
+function addDemoContent(){
+
+let newsContainer=document.getElementById("newsContainer")
+
+newsContainer.innerHTML+=`
+<div class="card">
+<h3>Incredible Reflex Save</h3>
+<p>A world class goalkeeper produced an unbelievable save in last night's match.</p>
+</div>
+`
+
+let transferContainer=document.getElementById("transferContainer")
+
+transferContainer.innerHTML+=`
+<div class="card">
+<h3>Transfer Update</h3>
+<p>Goalkeeper moves to a new club this summer.</p>
+</div>
+`
+
+let savesContainer=document.getElementById("savesContainer")
+
+savesContainer.innerHTML+=`
+<div class="card">
+<h3>Top Saves From Top Keeper</h3>
+<iframe width="100%" height="315"
+src="https://youtu.be/TJSTuPtOrzY?si=6VoXtVT9yChmp1Sd"
+frameborder="0"
+allowfullscreen>
+</iframe>
+</div>
+`
+
+}
+
+addDemoContent()
+
+</script>
+
+</body>
+</html>
